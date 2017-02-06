@@ -7,14 +7,11 @@ describe Tp::Subscriptions::Invoices::Failings::Dripper do
     subject { described_class.new(invoice) }
 
     before do
-      @resque_spec_inline = ResqueSpec.inline
       @resque_inline = Resque.inline
-      ResqueSpec.inline = true
       Resque.inline = true
     end
 
     after do
-      ResqueSpec.inline = @resque_spec_inline
       Resque.inline = @resque_inline
     end
 
