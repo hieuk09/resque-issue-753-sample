@@ -44,21 +44,5 @@ SampleApp::Application.configure do
 
   # config.force_ssl = true
   config.after_initialize do
-    if ENV['TC_TV']
-      require 'timecop'
-      year = ENV['TC_TV_YEAR'].to_i
-      month = ENV['TC_TV_MONTH'].to_i
-      day = ENV['TC_TV_DAY'].to_i
-      hour = ENV['TC_TV_HOUR'] ? ENV['TC_TV_HOUR'].to_i : 0
-      minute = ENV['TC_TV_MINUTE'] ? ENV['TC_TV_MINUTE'].to_i : 0
-      second = ENV['TC_TV_SECOND'] ? ENV['TC_TV_SECOND'].to_i : 0
-
-      time = Time.zone.local(year, month, day, hour, minute, second)
-      Timecop.travel(time)
-    end
-
-    # Bullet config
-    Bullet.enable = true
-    Bullet.rails_logger = true
   end
 end

@@ -4,11 +4,8 @@ Resque.redis = ENV['REDIS_URL']
 # Failure backend
 require 'resque-retry'
 require 'resque/failure/redis'
-require 'resque/failure/honeybadger'
-Resque::Failure::Honeybadger.configure
 
-Resque::Failure::MultipleWithRetrySuppression.classes = [Resque::Failure::Redis,
-                                                         Resque::Failure::Honeybadger]
+Resque::Failure::MultipleWithRetrySuppression.classes = [Resque::Failure::Redis]
 
 Resque::Failure.backend = Resque::Failure::MultipleWithRetrySuppression
 

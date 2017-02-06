@@ -1,16 +1,10 @@
 
-if !ENV['RUN_NIGHTLY_BUILD']
-  require 'simplecov'
-end
-
 ENV["RAILS_ENV"] ||= 'test'
-ENV['HONEYBADGER_ENV'] = 'test'
 
 require 'rails/application'
 require File.expand_path("../../config/environment", __FILE__)
 
 require 'rspec/rails'
-require 'rspec/collection_matchers'
 
 ActiveRecord::Migration.maintain_test_schema!
 
@@ -27,7 +21,6 @@ RSpec.configure do |config|
 
   config.append_after(:each) do
     DatabaseCleaner.clean
-    Timecop.return
   end
 
   config.expect_with :rspec do |expectations|

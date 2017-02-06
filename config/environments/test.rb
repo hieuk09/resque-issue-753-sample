@@ -50,15 +50,6 @@ SampleApp::Application.configure do
     config.logger = Logger.new(STDOUT)
     config.log_level = ENV['LOG_TO_CONSOLE']
   end
-
-  # url options for host
-  # config.action_controller.default_url_options = { host: 'local.host' }
-  # Speed up tests by lowering BCrypt's cost function.
-  require 'bcrypt'
-  silence_warnings do
-    BCrypt::Engine::DEFAULT_COST = BCrypt::Engine::MIN_COST
-  end
-
   #
   # Since we use transactional fixtures we always have 1 open transactions by default.
   # Without this configuration, resque jobs will never run even so we use Resque inline.
