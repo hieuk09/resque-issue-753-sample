@@ -9,16 +9,15 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
+
 module TinyPulse
   class Application < Rails::Application
+    require File.join(Rails.root, 'lib', 'tp', 'config')
+
     config.autoload_paths += %w[lib].map { |path| "#{Rails.root}/#{path}" }
 
 
     config.active_support.escape_html_entities_in_json = true
-
-    config.time_zone = Tp.time_zone
-
-    config.i18n.load_path += Dir["#{Rails.root.to_s}/config/locales/**/*.{rb,yml}"]
 
     config.encoding = "utf-8"
 
