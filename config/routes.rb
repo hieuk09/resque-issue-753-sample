@@ -1,2 +1,2 @@
-TinyPulse::Application.routes.draw do
+SampleApp::Application.routes.draw do
 end

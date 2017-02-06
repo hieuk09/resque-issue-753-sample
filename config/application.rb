@@ -10,7 +10,7 @@ if defined?(Bundler)
 end
 
 
-module TinyPulse
+module SampleApp
   class Application < Rails::Application
     require File.join(Rails.root, 'lib', 'tp', 'config')
 
