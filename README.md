@@ -2,7 +2,7 @@
 
 # Description
 
-This is a minimum rails app which I create to reproduce issue https://github.com/resque/resque/issues/753 of resque. 
+This is a minimum rails app which I create to reproduce issue [#753](https://github.com/resque/resque/issues/753) of resque. 
 This problem appears when using resque together with zeus
 
 To setup and reproduce the issue, please follow the steps below:
